@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+     background: url('../img/fundo.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #D10000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: slideInDown 1s ease-out;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 300px;
+    font-size: 1em;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #FFC107;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FFD54F;
+}
+
+.acompanhantes {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilos para a imagem inicial */
+.thumbnail {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Estilos para o lightbox */
+.lightbox {
+  display: none; /* Inicialmente escondido */
+  position: fixed; /* Fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+  z-index: 2; /* Acima de tudo */
+  text-align: center;
+  overflow: auto; /* Adiciona rolagem se a imagem for muito grande */
+}
+.lightbox img {
+  max-width: 90%;  /* Largura máxima de 90% da tela */
+  max-height: 90%; /* Altura máxima de 90% da tela */
+  width: auto;    /* Para manter a proporção */
+  height: auto;   /* Para manter a proporção */
+  margin-top: 5%;
+}
+
+.lightbox .close-button { /* Estilo do botão de fechar */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
