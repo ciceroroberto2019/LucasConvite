@@ -2,8 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-     background: url('../img/fundo.jpg') no-repeat center center fixed;
-    background-size: cover; 
+    background: url('../img/fundo.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     animation: fadeIn 1s ease-in-out;
     display: flex;
@@ -82,8 +82,13 @@ button:hover {
 
 /* Animações */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideInDown {
@@ -91,6 +96,7 @@ button:hover {
         transform: translateY(-100px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -99,37 +105,48 @@ button:hover {
 
 /* Estilos para a imagem inicial */
 .thumbnail {
-  width: 150px;
-  height: auto;
-  cursor: pointer;
+    width: 150px;
+    height: auto;
+    cursor: pointer;
 }
 
 /* Estilos para o lightbox */
 .lightbox {
-  display: none; /* Inicialmente escondido */
-  position: fixed; /* Fixo na tela */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
-  z-index: 2; /* Acima de tudo */
-  text-align: center;
-  overflow: auto; /* Adiciona rolagem se a imagem for muito grande */
-}
-.lightbox img {
-  max-width: 90%;  /* Largura máxima de 90% da tela */
-  max-height: 90%; /* Altura máxima de 90% da tela */
-  width: auto;    /* Para manter a proporção */
-  height: auto;   /* Para manter a proporção */
-  margin-top: 5%;
+    display: none;
+    /* Inicialmente escondido */
+    position: fixed;
+    /* Fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fundo escuro */
+    z-index: 2;
+    /* Acima de tudo */
+    text-align: center;
+    overflow: auto;
+    /* Adiciona rolagem se a imagem for muito grande */
 }
 
-.lightbox .close-button { /* Estilo do botão de fechar */
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
+.lightbox img {
+    max-width: 90%;
+    /* Largura máxima de 90% da tela */
+    max-height: 90%;
+    /* Altura máxima de 90% da tela */
+    width: auto;
+    /* Para manter a proporção */
+    height: auto;
+    /* Para manter a proporção */
+    margin-top: 5%;
+}
+
+.lightbox .close-button {
+    /* Estilo do botão de fechar */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }

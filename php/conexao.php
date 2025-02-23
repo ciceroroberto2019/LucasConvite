@@ -16,7 +16,8 @@ $conexao->set_charset("utf8"); // Define o charset para UTF-8
 $sql = "CREATE TABLE IF NOT EXISTS convidados (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    acompanhantes VARCHAR(255)
+    acompanhantes VARCHAR(255),
+    mensagem TEXT
 )";
 
 if ($conexao->query($sql) === TRUE) {

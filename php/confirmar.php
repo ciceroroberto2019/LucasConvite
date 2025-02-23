@@ -1,20 +1,35 @@
 <?php
 require_once('conexao.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $conexao->real_escape_string($_POST['nome']);
-    $acompanhantes = $conexao->real_escape_string($_POST['acompanhantes']);
+header('Content-Type: application/json');
 
-    $sql = "INSERT INTO convidados (nome, acompanhantes) VALUES ('$nome', '$acompanhantes')";
-
-    if ($conexao->query($sql) === TRUE) {
-        echo "Sua presença foi confirmada com sucesso! 🎉";
-    } else {
-        echo "Erro ao confirmar presença: " . $conexao->error;
+try {
+    // Pegar dados do POST
+    $nome = $_POST['nome'] ?? '';
+    $acompanhantes = $_POST['acompanhantes'] ?? '';
+    $mensagem = $_POST['mensagem'] ?? '';
+    
+    // Validar dados
+    if (empty($nome)) {
+        throw new Exception('Nome é obrigatório');
     }
-
-    $conexao->close();
-} else {
-    echo "Acesso inválido.";
+    
+    // Preparar e executar a query
+    $stmt = $conexao->prepare("INSERT INTO convidados (nome, acompanhantes, mensagem) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nome, $acompanhantes, $mensagem);
+    
+    if ($stmt->execute()) {
+        echo json_encode(['success' => true, 'message' => 'Presença confirmada com sucesso!']);
+    } else {
+        throw new Exception('Erro ao salvar no banco de dados');
+    }
+    
+} catch (Exception $e) {
+    echo json_encode([
+        'success' => false,
+        'message' => $e->getMessage()
+    ]);
 }
+
+$conexao->close();
 ?>

@@ -33,18 +33,17 @@
         <p>
             Ah, as crianças também podem brincar na piscininha e no parquinho que tem lá e os adultos podem descansar no redário.
         </p>
-        <form method="post">
+        <form method="post" action="php/confirmar.php" id="formPresenca">
             <label for="nome">Seu Nome:</label>
             <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
 
             <label for="acompanhantes">Quantos acompanhantes virão com você?</label>
             <input type="text" id="acompanhantes" name="acompanhantes" placeholder="Ex: 1 adulto e 2 crianças (ou deixe em branco)">
-
+			
+			<label for="mensagem">Deixe uma mensagem para o Luquinhas</label>
+			<textarea id="mensagem" name="mensagem" placeholder="Ex: Feliz Aniversário (ou deixe em branco)" rows="5" cols="40"></textarea>
             <button style="background-color: #FFC107; color: black;" type="submit">Confirmar Presença</button>
         </form>
-        <p class="acompanhantes">
-            Se você não tiver certeza de quantos acompanhantes virão, pode confirmar sua presença agora e nos avisar depois!
-        </p>
         <p>
           Os ingressos precisam ser comprados direto com eles pelo
           <a href="https://wa.me/5511942807987" target="_blank" rel="noopener noreferrer">
@@ -52,6 +51,10 @@
           </a>
           até o dia 11 de março, pois é limitado o nº de pessoas no local.
         </p>
+		<p>
+			Também é servido almoço feito no fogão a lenha, a comida é a vontade, os valores esta logo abaixo.
+			Por volta das 15:00 iremo cantar parabéns e celebrar a vida do Luquinhas com bolo e doces que amamãe fará com muito carinhopara os convidados.		
+		</p>
             <img src="img/thumbnail.jpg" alt="Descrição da Imagem" class="thumbnail" onclick="openLightbox('img/vj.jpg')">
 
             <div class="lightbox">
@@ -59,6 +62,6 @@
                 <img src="" alt="Imagem Ampliada" id="lightboxImg">
             </div>		
     </div>
-    <script src="js/script.js?v=<?php echo time(); ?>"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
